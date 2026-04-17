@@ -1,0 +1,38 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.shop-featured-product{
+    height: 100vh;
+    background-color: rgb(158, 133, 133);
+    display: flex;
+    flex-direction: column;
+}
+.featured-products{
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(172, 170, 170);
+}
+.featured-product-box{
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.myorder-list{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.myorder-list li{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    list-style-type: none;
+}

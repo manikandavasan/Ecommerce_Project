@@ -25,7 +25,7 @@
             <th>Product</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th>Edit/Remove</th>
+            <th>Remove</th>
           </tr>
           {% for item in cart_items %}
           <tr>
@@ -50,7 +50,7 @@
             <td>
               <a
                 href="{% url 'delete_from_cart' item.id %}"
-                class="text-decoration-none"
+                class="text-decoration-none btn bg-danger text-white"
                 >Delete<i class="fa-solid fa-trash"></i
               ></a>
             </td>

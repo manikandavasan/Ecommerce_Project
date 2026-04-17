@@ -6,10 +6,11 @@
 body{
     overflow-x: hidden;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(182, 184, 190);
 }
 
 .product_list{
+    background-color: rgb(182, 184, 190);
     min-height: 100vh;
     display: flex;
     gap: 50px;
@@ -24,6 +25,7 @@ body{
     align-items: center;
     justify-content: center;
     gap: 10px;
+    padding: 20px;
 }
 .card-list>.card-body{
     display: flex;

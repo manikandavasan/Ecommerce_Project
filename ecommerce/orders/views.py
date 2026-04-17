@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from products.models import *
 from orders.models import *
 from django.contrib.auth.decorators import login_required
+from itertools import chain
 
 # Create your views here.
 
@@ -119,8 +120,6 @@ def place_order(request):
 
 
 def my_orders(request):
-    ordered_id = Order.objects.filter(user=request.user).values_list('id', flat=True)
-    print("ordered_id",ordered_id)
-    order_items = OrderItem.objects.filter(order=ordered_id)
-    print("details", order_items)
-    return render(request, 'my_orders.html', {'order_items': order_items})
+    orders = Order.objects.filter(user=request.user).prefetch_related('orderitem_set__product')
+    print(orders)
+    return render(request, 'my_orders.html', {'order_items': orders})
