@@ -35,10 +35,11 @@ DEBUG = os.environ.get("DEBUG") == "True"
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['ecommerce_project.onrender.com',
-                 '127.0.0.1',
-                 'localhost']
-
+ALLOWED_HOSTS = [
+    'ecommerce-project-hm4w.onrender.com',
+    'localhost',
+    '127.0.0.1'
+]
 
 
 REST_FRAMEWORK = {
@@ -121,11 +122,16 @@ WSGI_APPLICATION = 'ecommerce_project.wsgi.application'
 
 
 
+import os
+import dj_database_url
+
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
 DATABASES = {
     'default': dj_database_url.parse(
-        os.environ.get("DATABASE_URL"),
+        DATABASE_URL,
         conn_max_age=600,
-        ssl_require=True
+        ssl_require='render' in DATABASE_URL
     )
 }
 # Password validation
