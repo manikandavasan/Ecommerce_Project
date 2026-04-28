@@ -35,11 +35,7 @@ DEBUG = os.environ.get("DEBUG") == "True"
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = [
-    'ecommerce-project-hm4w.onrender.com',
-    'localhost',
-    '127.0.0.1'
-]
+ALLOWED_HOSTS = ['*']
 
 
 REST_FRAMEWORK = {
