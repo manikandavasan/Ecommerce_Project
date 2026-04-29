@@ -30,7 +30,7 @@ export default function CategoryProducts() {
                     <div className="card-body">
                         <h5 className="card-title">{product.name}</h5>
                         <p className="card-text">₹ {product.price}</p>
-                        <a href={ `/products/product/${product.id}` } className="btn btn-primary p-2 ps-3 pe-3">View</a>
+                        <Link className="btn btn-primary p-2 ps-3 pe-3" to={`/product/${product.id}`}>View Detail</Link>
                     </div>
           </div>
         ))}
