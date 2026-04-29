@@ -189,7 +189,7 @@ export default function Home() {
     <div className="category-wrapper">
         {categories.length > 0 ? (
           categories.map((cat) => (
-            <a key={cat.id} href={`/products/category/${cat.id}/`}>
+            <Link key={cat.id} to={`/products/category/${cat.id}/`}>
           <div className="card category-small-box" key={cat.id}>
             <img
                 src={`https://ecommerce-project-hm4w.onrender.com/${cat.image}`}
@@ -197,7 +197,7 @@ export default function Home() {
               />
             <h6>{cat.name}</h6>
           </div>
-        </a>
+        </Link>
           ))
         ) : (
           <p>No categories found</p>
