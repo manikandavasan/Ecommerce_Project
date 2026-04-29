@@ -21,7 +21,7 @@ export default function Home() {
 
   const fetchData = async () => {
     try {
-      const res = await API.get(`accounts/home/${id}`)
+      const res = await API.get(`accounts/home/`)
       console.log("API Data:", res.data);
       setProducts(res.data.products || []);
       setCategories(res.data.categories || []);

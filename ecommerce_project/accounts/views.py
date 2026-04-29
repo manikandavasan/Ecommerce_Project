@@ -84,7 +84,7 @@ def signin_api(request):
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def home_api(request, id):
+def home_api(request):
     products = Product.objects.all().values()
     categories = Category.objects.all().values()
 
