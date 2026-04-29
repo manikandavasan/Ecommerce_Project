@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min'
 import "../assets/css/shopping_cart.css"
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const [cartItems, setCartItems] = useState([]);
@@ -120,7 +121,7 @@ export default function Cart() {
           <tr>
             <td>
               <button className="btn bg-success text-white">
-                <a href={ `/orders/checkout/` } className="text-decoration-none text-white">Proceed to Checkout</a>
+                <Link to={ `/checkout/` } className="text-decoration-none text-white">Proceed to Checkout</Link>
               </button>
             </td>
           </tr>
