@@ -25,7 +25,6 @@ export default function Signin() {
     try {
       const res = await API.post("accounts/signin/", form);
 
-    // store token
     localStorage.setItem("access_token", res.data.access);
 
     navigate(`/accounts/home/`);

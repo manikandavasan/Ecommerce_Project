@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import API from "../api/axios.js";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -115,8 +116,9 @@ export default function Home() {
                 </div>
                 </a>
               </div>
-          <a href={`/orders/cart/`}><button className="btn bg-secondary text-white"><i className="fa-solid fa-cart-arrow-down"></i> Cart</button></a>
-            </div>
+          {/* <a href={`/orders/cart/`}><button className="btn bg-secondary text-white"><i className="fa-solid fa-cart-arrow-down"></i> Cart</button></a> */}
+          <Link to="/cart" className="btn bg-secondary text-white">Cart</Link>
+          </div>
         </div>
       </div>
 
@@ -139,7 +141,7 @@ export default function Home() {
                       height: "650px"
                     }}
                   >
-<img src={`https://ecommerce-project-hm4w.onrender.com$/media/{product.image}`} />
+<img src={`https://ecommerce-project-hm4w.onrender.com$/media/${product.image}`} />
                     <div className="carousel-content text-center text-white">
                       <h1>{product.name}</h1>
                       <p>{product.description}</p>

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 // Pages
 import Signup from "./pages/signup.jsx";
@@ -19,21 +19,21 @@ function App() {
 
         {/* Auth */}
         <Route path="/" element={<Signup />} />
-        <Route path="accounts/signin/" element={<Signin />} />
+        <Route path="/signin/" element={<Signin />} />
 
         {/* Main Pages */}
-        <Route path="accounts/home/" element={<Home />} />
-        <Route path="orders/cart/" element={<Cart />} />
-        <Route path="orders/checkout/" element={<Checkout />} />
-        <Route path="orders/payment/" element={<Payment />} />
-        <Route path="orders/my_orders/" element={<MyOrders />} />
+        <Route path="/home/" element={<Home />} />
+        <Route path="/cart/" element={<Cart />} />
+        <Route path="/checkout/" element={<Checkout />} />
+        <Route path="/payment/" element={<Payment />} />
+        <Route path="/my_orders/" element={<MyOrders />} />
 
         {/* Dynamic Routes */}
-        <Route path="products/product/:id/" element={<ProductDetail />} />
-        <Route path="products/category/:id/" element={<CategoryProducts />} />
+        <Route path="/product/:id/" element={<ProductDetail />} />
+        <Route path="/category/:id/" element={<CategoryProducts />} />
 
         {/* Search */}
-        <Route path="products/search/" element={<Search />} />
+        <Route path="/search/" element={<Search />} />
 
       </Routes>
     </Router>
