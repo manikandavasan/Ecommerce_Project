@@ -221,7 +221,7 @@ export default function Home() {
                 <h5> inr. {product.price}</h5>
         <div>
           <button className="btn bg-primary text-white" onClick={addToCart}>Add to Cart</button>
-          <Link className="btn bg-secondary text-decoration-none text-white" to={`/products/product/${product.id}`}>View Detail</Link>
+          <Link className="btn bg-secondary text-decoration-none text-white" to={`/product/${product.id}`}>View Detail</Link>
         </div>
       </div>
           ))
