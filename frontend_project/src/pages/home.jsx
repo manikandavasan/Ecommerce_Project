@@ -133,12 +133,13 @@ export default function Home() {
                   <div
                     className="carousel-bg carousel-image"
                     style={{
-                      backgroundImage: `url("http://127.0.0.1:8000/media/${product.image}")`,
+                      backgroundImage: `url("https://ecommerce-project-hm4w.onrender.com${product.image}")`,
                       backgroundSize: "80% 100%",
                       backgroundPosition: "center",
                       height: "650px"
                     }}
                   >
+<img src={`https://ecommerce-project-hm4w.onrender.com$/media/{product.image}`} />
                     <div className="carousel-content text-center text-white">
                       <h1>{product.name}</h1>
                       <p>{product.description}</p>
@@ -189,7 +190,7 @@ export default function Home() {
             <a key={cat.id} href={`/products/category/${cat.id}/`}>
           <div className="card category-small-box" key={cat.id}>
             <img
-                src={`http://127.0.0.1:8000/media/${cat.image}`}
+                src={`https://ecommerce-project-hm4w.onrender.com/media/${cat.image}`}
                 alt={cat.name} className="category-image"
               />
             <h6>{cat.name}</h6>
@@ -213,7 +214,7 @@ export default function Home() {
     {products.length > 0 ? (
           products.map((product) => (
             <div key={product.id} className="featured-product-box">
-                <img src={`http://127.0.0.1:8000/media/${product.image}`} alt={product.name} className="featured-product-image" />
+                <img src={`https://ecommerce-project-hm4w.onrender.com/media/${product.image}`} alt={product.name} className="featured-product-image" />
                 <h6>{ product.name }</h6>
                 <h5> inr. {product.price}</h5>
         <div>

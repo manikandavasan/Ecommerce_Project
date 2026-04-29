@@ -27,16 +27,36 @@ export default function Signup() {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const res = await API.post("accounts/signup/", form);
+  if (
+    !form.username ||
+    !form.email ||
+    !form.password ||
+    !form.confirm_password
+  ) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  try {
+    const res = await API.post("/accounts/signup/", form);
+
+    console.log("Signup response:", res.data);
+
+    if (res.status === 201) {
+      alert("Signup success");
       setMessage(res.data.message);
-      navigate("/accounts/signin/")
-    } catch (err) {
-      setMessage(err.response?.data?.error || "Error occurred");
+
+      // IMPORTANT: consistent route
+      navigate("/accounts/signin/");
     }
-  };
+
+  } catch (error) {
+    console.log("Signup error:", error.response?.data);
+    alert(error.response?.data?.error || "Signup failed");
+  }
+};
 
   return (
     <>

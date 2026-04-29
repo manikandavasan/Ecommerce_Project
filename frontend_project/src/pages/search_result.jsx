@@ -30,7 +30,7 @@ export default function Search() {
         {results.map((product) => (
           <div key={product.id} className="featured-product-box">
             <img
-              src={`http://127.0.0.1:8000${product.image}`}
+              src={`https://ecommerce-project-hm4w.onrender.com/media/${product.image}`}
               alt=""
               height="200"
             />

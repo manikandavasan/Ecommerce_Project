@@ -24,7 +24,7 @@ export default function CategoryProducts() {
         <div className="col product_list">
           {products.map((product) => (
           <div key={product.id} className="card card-list">
-                    <img src={`http://127.0.0.1:8000/media/${product.image}`} alt="" height="50%" width="100%"
+                    <img src={`https://ecommerce-project-hm4w.onrender.com/media/${product.image}}`} alt="" height="50%" width="100%"
                      />
                     <div className="card-body">
                         <h5 className="card-title">{product.name}</h5>

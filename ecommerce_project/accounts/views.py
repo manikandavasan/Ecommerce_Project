@@ -25,13 +25,17 @@ def signup_api(request):
         password = data.get('password')
         confirm_password = data.get('confirm_password')
 
+        # ✅ validation
+        if not username or not email or not password:
+            return Response({'error': 'Required fields missing'}, status=400)
+
         if password != confirm_password:
             return Response({'error': 'Passwords do not match'}, status=400)
 
         if User.objects.filter(username=username).exists():
             return Response({'error': 'Username already exists'}, status=400)
 
-        User.objects.create_user(
+        user = User.objects.create_user(
             username=username,
             first_name=first_name,
             last_name=last_name,
@@ -39,9 +43,12 @@ def signup_api(request):
             password=password
         )
 
+        user.save()
+
         return Response({'message': 'User created successfully'}, status=201)
 
     except Exception as e:
+        print("Signup error:", e)
         return Response({'error': str(e)}, status=500)
 
 

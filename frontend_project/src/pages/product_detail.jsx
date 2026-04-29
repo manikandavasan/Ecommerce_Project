@@ -48,7 +48,7 @@ export default function ProductDetail() {
       <h1>Product Details</h1>
       <div className="row product-box">
         <div className="col-lg-6 product_image">
-          <img src={`http://127.0.0.1:8000/${product.image}`} alt=""  />
+          <img src={`https://ecommerce-project-hm4w.onrender.com/media/${product.image}`} alt=""  />
         </div>
         <div className="col-lg-6 detail-box">
             <h1>{product.name}</h1>
