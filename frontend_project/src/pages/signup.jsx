@@ -49,7 +49,7 @@ export default function Signup() {
       setMessage(res.data.message);
 
       // IMPORTANT: consistent route
-      navigate("/accounts/signin/");
+      navigate("/signin/");
     }
 
   } catch (error) {
