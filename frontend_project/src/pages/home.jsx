@@ -192,7 +192,7 @@ export default function Home() {
             <a key={cat.id} href={`/products/category/${cat.id}/`}>
           <div className="card category-small-box" key={cat.id}>
             <img
-                src={`https://ecommerce-project-hm4w.onrender.com/media/${cat.image}`}
+                src={`https://ecommerce-project-hm4w.onrender.com/${cat.image}`}
                 alt={cat.name} className="category-image"
               />
             <h6>{cat.name}</h6>
