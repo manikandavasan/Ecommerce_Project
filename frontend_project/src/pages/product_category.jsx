@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 import "../assets/css/product_category.css"
+import API from "../api/axios.js"
 
 export default function CategoryProducts() {
   const { id } = useParams();
@@ -14,7 +15,7 @@ export default function CategoryProducts() {
   }, [id]);
 
   const fetchProducts = async () => {
-    const res = await axios.get(`http://127.0.0.1:8000/products/category/${id}/`);
+    const res = API.get(`/products/category/${id}/`);
     setProducts(res.data.products);
   };
 
