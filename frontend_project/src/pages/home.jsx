@@ -91,7 +91,7 @@ export default function Home() {
           </li>
 
           <li className="nav-item">
-            <a className="nav-link" href={`/orders/my_orders/`} >My Orders</a>
+            <Link className="nav-link" to={`/my_orders/`} >My Orders</Link>
           </li>
 
         </ul>
