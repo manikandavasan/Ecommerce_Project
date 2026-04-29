@@ -37,7 +37,7 @@ export default function ProductDetail() {
     try {
       const res = await API.post("orders/cart/add/", cartData);
       setMessage("Added successfully");
-      navigate(`/orders/cart/`)
+      navigate(`/cart/`)
     } catch (err) {
       setMessage(err.response?.data?.error || "Error occurred");
     }
