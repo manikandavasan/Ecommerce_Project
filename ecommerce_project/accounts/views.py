@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from rest_framework_simplejwt.tokens import RefreshToken
 # from rest_framework.permissions import IsAuthenticated
 from rest_framework.permissions import AllowAny
-
+from .serializers import *
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 
@@ -85,12 +85,15 @@ def signin_api(request):
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def home_api(request):
-    products = Product.objects.all().values()
-    categories = Category.objects.all().values()
+    products = Product.objects.all()
+    categories = Category.objects.all()
+
+    product_data = ProductSerializer(products, many=True, context={'request': request}).data
+    category_data = CategorySerializer(categories, many=True, context={'request': request}).data
 
     return Response({
-        'products': list(products),
-        'categories': list(categories)
+        'products': product_data,
+        'categories': category_data
     })
 
 

@@ -135,13 +135,13 @@ export default function Home() {
                   <div
                     className="carousel-bg carousel-image"
                     style={{
-                      backgroundImage: `url("https://ecommerce-project-hm4w.onrender.com/${product.image}")`,
+                      backgroundImage: `url(${product.image}")`,
                       backgroundSize: "80% 100%",
                       backgroundPosition: "center",
                       height: "650px"
                     }}
                   >
-<img src={`https://ecommerce-project-hm4w.onrender.com$/media/${product.image}`} />
+<img src={`${product.image}`} />
                     <div className="carousel-content text-center text-white">
                       <h1>{product.name}</h1>
                       <p>{product.description}</p>
@@ -192,7 +192,7 @@ export default function Home() {
             <Link key={cat.id} to={`/category/${cat.id}/`}>
           <div className="card category-small-box" key={cat.id}>
             <img
-                src={`https://ecommerce-project-hm4w.onrender.com/media/${cat.image}`}
+                src={`${cat.image}`}
                 alt={cat.name} className="category-image"
               />
             <h6>{cat.name}</h6>
