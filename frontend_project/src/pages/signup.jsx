@@ -30,14 +30,14 @@ export default function Signup() {
   e.preventDefault();
 
   if (
-    !form.username ||
-    !form.email ||
-    !form.password ||
-    !form.confirm_password
-  ) {
-    alert("Please fill all fields");
-    return;
-  }
+  !form.username?.trim() ||
+  !form.email?.trim() ||
+  !form.password?.trim() ||
+  !form.confirm_password?.trim()
+) {
+  alert("All fields are required");
+  return;
+}
 
   try {
     const res = await API.post("/accounts/signup/", form);
@@ -65,12 +65,12 @@ export default function Signup() {
       <form onSubmit={handleSubmit} className="signup-form">
         <h2>SignUp Form</h2>
 
-        <input type="text" name="username" placeholder="Username" onChange={handleChange} />
-        <input type="text" name="first_name" placeholder="First Name" onChange={handleChange} />
-        <input type="text" name="last_name" placeholder="Last Name" onChange={handleChange} />
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} />
-        <input type="password" name="confirm_password" placeholder="Confirm Password" onChange={handleChange} />
+        <input type="text" name="username" value={form.username} onChange={handleChange} />
+        <input type="text" name="first_name" value={form.first_name} onChange={handleChange} />
+        <input type="text" name="last_name" value={form.last_name} onChange={handleChange} />
+        <input type="email" name="email" value={form.email} onChange={handleChange} />
+        <input type="password" name="password" value={form.password} onChange={handleChange} />
+        <input type="password" name="confirm_password" value={form.confirm_password} onChange={handleChange} />
 
         <button type="submit">Register</button>
         <p>{message}</p>

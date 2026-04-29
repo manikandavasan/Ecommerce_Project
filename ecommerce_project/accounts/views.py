@@ -15,6 +15,7 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def signup_api(request):
+    print("REQUEST DATA:", request.data)
     try:
         data = request.data
 
@@ -25,9 +26,19 @@ def signup_api(request):
         password = data.get('password')
         confirm_password = data.get('confirm_password')
 
-        # ✅ validation
-        if not username or not email or not password:
-            return Response({'error': 'Required fields missing'}, status=400)
+        missing = []
+        if not username:
+            missing.append("username")
+        if not email:
+            missing.append("email")
+        if not password:
+            missing.append("password")
+
+        if missing:
+            return Response(
+                {'error': f'Missing fields: {", ".join(missing)}'},
+                status=400
+    )
 
         if password != confirm_password:
             return Response({'error': 'Passwords do not match'}, status=400)
