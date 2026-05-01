@@ -30,24 +30,16 @@ def product_detail_api(request, id):
         'related_products': list(related_products_serializer.data)
     })
 
-@api_view(['POST'])
-def add_category(request):
-    name = request.data.get('name')
-    file = request.FILES.get('image')
-
-    if not file:
-        return Response({"error": "Image is required"}, status=400)
-
-    result = cloudinary.uploader.upload(file, folder="categories")
-
-    category = Category.objects.create(
-        name=name,
-        image=result['secure_url']
-    )
+@api_view(['GET'])
+def category_products_api(request, id):
+    category = get_object_or_404(Category, id=id)
+    products = Product.objects.filter(category_id=id)
+    category_serializer = ProductSerializer(products, many=True)
+    print("DataProduct", category_serializer.data)
 
     return Response({
-        "message": "Category created",
-        "image": category.image
+        'category': category_serializer.data,
+        'products': list(products.values())
     })
 
 @api_view(['GET'])
