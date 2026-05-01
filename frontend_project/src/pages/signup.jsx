@@ -52,10 +52,16 @@ export default function Signup() {
       navigate("/signin/");
     }
 
-  } catch (error) {
-    console.log("Signup error:", error.response?.data);
-    alert(error.response?.data?.error || "Signup failed");
-  }
+  } 
+  catch (error) {
+  console.log("FULL ERROR:", error.response);
+
+  alert(
+    error.response?.data?.error ||
+    JSON.stringify(error.response?.data) ||
+    "Signup failed"
+  );
+}
 };
 
   return (
