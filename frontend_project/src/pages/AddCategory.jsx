@@ -18,7 +18,7 @@ export default function AddCategory() {
   formData.append("image", file);
 
   try {
-    await API.post("add-category/", formData, {
+    await API.post("products/add-category/", formData, {
       headers: {
         "Content-Type": "multipart/form-data"
       }
