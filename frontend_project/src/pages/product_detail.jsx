@@ -48,7 +48,7 @@ export default function ProductDetail() {
       <h1>Product Details</h1>
       <div className="row product-box">
         <div className="col-lg-6 product_image">
-          <img src={`https://ecommerce-project-hm4w.onrender.com/media/${product.image}`} alt=""  />
+          <img src={product.image} alt=""  />
         </div>
         <div className="col-lg-6 detail-box">
             <h1>{product.name}</h1>
@@ -82,7 +82,7 @@ export default function ProductDetail() {
         <div className="col related-product">
             {related.map((p) => (
             <div key={p.id} className="related-product-box">
-              <img src={`http://127.0.0.1:8000/${p.image}`} alt="" width="100%" height="100px" />
+              <img src={p.image} alt="" width="100%" height="100px" />
                     <p>{p.name}</p>
                     <h3>${p.price}</h3>
                 </div>

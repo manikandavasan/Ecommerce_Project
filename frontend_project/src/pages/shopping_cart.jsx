@@ -73,7 +73,7 @@ export default function Cart() {
           {cartItems.map((item) => (
             <tr key={item.id}>
               <td>
-                <img src={`https://ecommerce-project-hm4w.onrender.com/media/${item.image}`} width="80" alt="" className="cart-image"/>
+                <img src={item.image} width="80" alt="" className="cart-image"/>
                 {item.product_name}
               </td>
 

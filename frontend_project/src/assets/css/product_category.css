@@ -33,3 +33,11 @@
     align-items: center;
     justify-content: center;
 }
+
+
+@media screen and (max-width:396px) {
+    .category-overall-div{
+        padding: 10px;
+    }
+}
+

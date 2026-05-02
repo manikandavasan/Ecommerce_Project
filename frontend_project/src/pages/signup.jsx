@@ -47,10 +47,8 @@ export default function Signup() {
     if (res.status === 201) {
       alert("Signup success");
       setMessage(res.data.message);
-
-      // IMPORTANT: consistent route
-      navigate("/signin/");
     }
+    navigate("/signin/");
 
   } 
   catch (error) {

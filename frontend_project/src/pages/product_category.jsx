@@ -21,12 +21,12 @@ export default function CategoryProducts() {
   };
 
   return (
-    <div className="row">
+    <div className="row category-overall-div">
       <h1>Category Products</h1>
         <div className="col product_list">
           {products.map((product) => (
           <div key={product.id} className="card card-list">
-                    <img src={`https://ecommerce-project-hm4w.onrender.com/media/${product.image}}`} alt="" height="50%" width="100%"
+                    <img src={product.image} alt="" height="50%" width="100%"
                      />
                     <div className="card-body">
                         <h5 className="card-title">{product.name}</h5>

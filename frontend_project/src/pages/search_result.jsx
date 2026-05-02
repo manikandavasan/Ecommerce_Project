@@ -10,27 +10,17 @@ export default function Search() {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    const res = await axios.get(`http://127.0.0.1:8000/search/?q=${query}`);
+    const res = await API.get(`search/?q=${query}`);
     setResults(res.data.results);
   };
 
   return (
-    // <div className="container">
-    //   <form onSubmit={handleSearch}>
-    //     <input
-    //       type="text"
-    //       placeholder="Search"
-    //       onChange={(e) => setQuery(e.target.value)}
-    //     />
-    //     <button>Search</button>
-    //   </form>
-
       <div row className="shop-featured-product">
         <div className="col-12 featured-products">
         {results.map((product) => (
           <div key={product.id} className="featured-product-box">
             <img
-              src={`https://ecommerce-project-hm4w.onrender.com/media/${product.image}`}
+              src={product.image}
               alt=""
               height="200"
             />
@@ -44,6 +34,5 @@ export default function Search() {
         ))}
       </div>
       </div>
-    // </div>
   );
 }

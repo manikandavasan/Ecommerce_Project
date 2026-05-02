@@ -135,17 +135,17 @@ export default function Home() {
                   <div
                     className="carousel-bg carousel-image"
                     style={{
-                      backgroundImage: `url(../assets/images/products/${product.image}")`,
+                      backgroundImage: `url(${product.image})`,
                       backgroundSize: "80% 100%",
                       backgroundPosition: "center",
                       height: "650px"
                     }}
                   >
-<img src={`${product.image}`} />
+                  <img src={product.image} />
                     <div className="carousel-content text-center text-white">
                       <h1>{product.name}</h1>
                       <p>{product.description}</p>
-                      <h2>${product.price}</h2>
+                      <h2>&#8377; {product.price}</h2>
 
                       <Link to={`/product/${product.id}`} className="btn btn-primary m-5">
                         Shop Now
@@ -191,7 +191,6 @@ export default function Home() {
           categories.map((cat) => (
             <Link key={cat.id} to={`/category/${cat.id}/`}>
           <div className="card category-small-box" key={cat.id}>
-            <h5>{cat.id}</h5>
             <img
                 src={cat.image}
                 alt={cat.name} className="category-image"
@@ -217,9 +216,9 @@ export default function Home() {
     {products.length > 0 ? (
           products.map((product) => (
             <div key={product.id} className="featured-product-box">
-                <img src={`https://ecommerce-project-hm4w.onrender.com/media/${product.image}`} alt={product.name} className="featured-product-image" />
+                <img src={product.image} alt={product.name} className="featured-product-image" />
                 <h6>{ product.name }</h6>
-                <h5> inr. {product.price}</h5>
+                <h5> &#8377; {product.price}</h5>
         <div>
           <button className="btn bg-primary text-white" onClick={addToCart}>Add to Cart</button>
           <Link className="btn bg-secondary text-decoration-none text-white" to={`/product/${product.id}`}>View Detail</Link>

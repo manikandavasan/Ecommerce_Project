@@ -20,6 +20,9 @@ export default function MyOrders() {
     }
       }
     );
+    if (!res){
+      alert('No Order yet')
+    }
     setOrders(res.data);
     console.log(res.data);
   };
