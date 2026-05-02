@@ -82,19 +82,25 @@ def signin_api(request):
     else:
         return Response({'error': 'Invalid credentials'}, status=401)
 
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+
 @api_view(['GET'])
-@permission_classes([AllowAny])
-def home_api(request):
-    products = Product.objects.all()
-    categories = Category.objects.all()
+@permission_classes([IsAuthenticated])
+def home(request):
+    try:
+        user = request.user
 
-    product_data = ProductSerializer(products, many=True, context={'request': request}).data
-    category_data = CategorySerializer(categories, many=True, context={'request': request}).data
+        return Response({
+            "message": "Welcome",
+            "username": user.username,
+            "email": user.email
+        })
 
-    return Response({
-        'products': product_data,
-        'categories': category_data
-    })
+    except Exception as e:
+        print("HOME ERROR:", str(e))   # 🔥 check Render logs
+        return Response({"error": str(e)}, status=500)
 
 
 @api_view(['GET'])
