@@ -8,6 +8,8 @@ from rest_framework.permissions import IsAuthenticated
 from .serializers import *
 import cloudinary.uploader
 from .models import *
+from django.db import connection
+
 
 
 @api_view(['GET'])
@@ -114,3 +116,21 @@ def add_product(request):
 def get_categories(request):
     categories = Category.objects.all().values()
     return Response(categories)
+
+
+@api_view(['DELETE'])
+def reset_database(request):
+    try:
+        # delete data
+        Product.objects.all().delete()
+        Category.objects.all().delete()
+
+        # reset IDs (PostgreSQL)
+        with connection.cursor() as cursor:
+            cursor.execute("ALTER SEQUENCE products_category_id_seq RESTART WITH 1;")
+            cursor.execute("ALTER SEQUENCE products_product_id_seq RESTART WITH 1;")
+
+        return Response({"message": "Database reset successful"})
+
+    except Exception as e:
+        return Response({"error": str(e)}, status=500)
