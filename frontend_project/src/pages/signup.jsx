@@ -63,7 +63,6 @@ export default function Signup() {
 
         <button type="submit" className="btn btn-primary" disabled={loading}> {loading ? ( <span className="spinner-border spinner-border-sm"></span> ) : ( "Register" )} </button>
         <p>{message}</p>
-        
         <div className="signin-root">
           <p>already have an account</p>
           <Link to={`/signin/`} className="text-white btn btn-primary p-1">Click here</Link>

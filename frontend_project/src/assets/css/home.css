@@ -79,6 +79,7 @@
     height: 500px !important;
     border-radius: 10px;
     overflow: hidden;
+    padding-top: 100px;
 }
 
 .home-category {
