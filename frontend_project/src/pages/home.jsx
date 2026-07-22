@@ -143,7 +143,7 @@ export default function Home() {
                           backgroundRepeat: "no-repeat"
                         }}>
                 <Carousel.Caption className="pt-3">
-                  <h5>{ product.name }</h5>
+                  {/* <h5>{ product.name }</h5> */}
                   {/* <h2>{ product.description }</h2> */}
                   <h5> &#8377; { product.price }</h5>
                   <Link className="btn bg-secondary text-decoration-none text-white" to={`/product/${product.id}`}>Shop Now</Link>
@@ -161,7 +161,7 @@ export default function Home() {
     </div>
 
 
-      <div className="row shop-by-category">
+      {/* <div className="row shop-by-category">
     <div className="col-12 home-category">
       <h2>Shop by Category</h2>
       <a href="">View All <i className="fa-solid fa-greater-than"></i></a>
@@ -181,7 +181,7 @@ export default function Home() {
         )}
       </div>
       
-      </div>
+      </div> */}
 
   <div className="row shop-featured-product">
     <div className="col-12 home-category">
