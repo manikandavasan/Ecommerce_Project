@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  // baseURL: "https://ecommerce-project-hm4w.onrender.com/"
-  baseURL: "http://127.0.0.1:8000/"
+  baseURL: "https://ecommerce-project-hm4w.onrender.com/"
+  // baseURL: "http://127.0.0.1:8000/"
 });
 
 // attach token automatically
