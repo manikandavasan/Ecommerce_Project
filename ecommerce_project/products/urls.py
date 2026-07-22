@@ -9,5 +9,6 @@ urlpatterns = [
     path('add-category/', add_category),
     path('add-product/', add_product),
     path('categories/', get_categories),
+    path('products/', get_categories),
     path('reset-db/', reset_database),
 ]

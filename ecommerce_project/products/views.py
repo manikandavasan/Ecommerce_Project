@@ -100,38 +100,41 @@ def add_category(request):
 
 @api_view(['POST'])
 def add_product(request):
-    name = request.data.get('name')
-    category_id = request.data.get('category')
-    file = request.FILES.get('image')
+    try:
+        category = Category.objects.get(id=request.data.get("category"))
 
-    if not file:
-        return Response({"error": "Image is required"}, status=400)
+        product = Product.objects.create(
+            name=request.data.get("name"),
+            category=category,
+            description=request.data.get("description"),
+            price=request.data.get("price"),
+            stock=request.data.get("stock"),
+            image=request.data.get("image"),   # Direct URL from dataset
+            created_by="admin",
+            updated_by="admin"
+        )
 
-    category = Category.objects.get(id=category_id)
+        return Response({
+            "message": "Product created successfully",
+            "product_id": product.id
+        }, status=201)
 
-    result = cloudinary.uploader.upload(file, folder="products")
+    except Category.DoesNotExist:
+        return Response({"error": "Category not found"}, status=404)
 
-    product = Product.objects.create(
-        name=name,
-        category=category,
-        image=result['secure_url'],
-        description=request.data.get('description'),
-        price=request.data.get('price'),
-        stock=request.data.get('stock'),
-        created_by="admin",
-        updated_by="admin"
-    )
-
-    return Response({
-        "message": "Product created",
-        "image": product.image
-    })
+    except Exception as e:
+        return Response({"error": str(e)}, status=500)
 
 
 @api_view(['GET'])
 def get_categories(request):
     categories = Category.objects.all().values()
     return Response(categories)
+
+@api_view(['GET'])
+def get_products(request):
+    products = Product.objects.all().values()
+    return Response(products)
 
 
 @api_view(['DELETE'])
