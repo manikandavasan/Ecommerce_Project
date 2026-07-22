@@ -145,7 +145,7 @@ export default function Home() {
                 <Carousel.Caption className="pt-3">
                   {/* <h5>{ product.name }</h5> */}
                   {/* <h2>{ product.description }</h2> */}
-                  <h5> &#8377; { product.price }</h5>
+                  <h5 className="carosel-product-price"> &#8377; { product.price }</h5>
                   <Link className="btn bg-secondary text-decoration-none text-white" to={`/product/${product.id}`}>Shop Now</Link>
                 </Carousel.Caption>
               </div>
@@ -154,7 +154,6 @@ export default function Home() {
           ):(
             <p>Product not found</p>
           )
-            
           }
           </Carousel>
         </div>
@@ -194,7 +193,11 @@ export default function Home() {
           products.map((product) => (
             <div key={product.id} className="featured-product-box">
                 <img src={product.image} alt={product.name} className="featured-product-image" />
-                <h6>{ product.name }</h6>
+                <h6>
+                  {productName.split(' ').length > 5 
+                    ? productName.split(' ').slice(0, 5).join(' ') + '...' 
+                    : productName}
+                </h6>
                 <h5> &#8377; {product.price}</h5>
         <div>
           <button className="btn bg-primary text-white" onClick={()=>addToCart(product.id)}>Add to Cart</button>
