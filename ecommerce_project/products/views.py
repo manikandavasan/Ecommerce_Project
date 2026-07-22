@@ -105,7 +105,7 @@ def add_product(request):
 
         product = Product.objects.create(
             name=request.data.get("name"),
-            category=category,
+            category=1,
             description=request.data.get("description"),
             price=request.data.get("price"),
             stock=request.data.get("stock"),
