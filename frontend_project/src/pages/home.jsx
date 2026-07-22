@@ -144,7 +144,7 @@ export default function Home() {
                         }}>
                 <Carousel.Caption className="pt-3">
                   <h5>{ product.name }</h5>
-                  <h2>{ product.description }</h2>
+                  {/* <h2>{ product.description }</h2> */}
                   <h5> &#8377; { product.price }</h5>
                   <Link className="btn bg-secondary text-decoration-none text-white" to={`/product/${product.id}`}>Shop Now</Link>
                 </Carousel.Caption>

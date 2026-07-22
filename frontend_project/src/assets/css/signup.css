@@ -96,6 +96,9 @@
 }
 
 @media (max-width: 480px) {
+    .signup-body{
+        height: 100vh;
+    }
     .signup-form {
         padding: 20px;
     }

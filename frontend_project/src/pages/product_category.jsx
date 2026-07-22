@@ -38,7 +38,7 @@ const fetchProducts = async () => {
           ) : (
             products.map((product) => (
               <div key={product.id} className="card card-list">
-                    <img src={product.image} alt={product.name} height="50%" width="100%"
+                    <img src={product.image} alt={product.name} height="65%" width="100%"
                      />
                     <div className="card-body">
                         <h5 className="card-title">{product.name}</h5>
