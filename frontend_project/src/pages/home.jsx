@@ -194,9 +194,9 @@ export default function Home() {
             <div key={product.id} className="featured-product-box">
                 <img src={product.image} alt={product.name} className="featured-product-image" />
                 <h6>
-                  {productName.split(' ').length > 5 
-                    ? productName.split(' ').slice(0, 5).join(' ') + '...' 
-                    : productName}
+                  {product.name.split(' ').length > 5 
+                    ? product.name.split(' ').slice(0, 5).join(' ') + '...' 
+                    : product.name}
                 </h6>
                 <h5> &#8377; {product.price}</h5>
         <div>
