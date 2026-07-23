@@ -10,7 +10,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
 
-        csv_file = r"C:\Users\m4558\OneDrive\Documents\INTERVIEW PREPARATION\Ecommerce_Full_stack\ecommerce_project\Toys and Games.csv"
+        csv_file = r"C:\Users\m4558\OneDrive\Documents\INTERVIEW PREPARATION\Ecommerce_Full_stack\ecommerce_project\Watches.csv"
 
         df = pd.read_csv(csv_file)
 
