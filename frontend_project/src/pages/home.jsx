@@ -137,8 +137,8 @@ export default function Home() {
             <Carousel.Item key={product.id}>
               <div style={{
                           backgroundImage: `url(${product.image})`,
-                          height: "500px",
-                          backgroundSize: "80% 100%",
+                          height: "400px",
+                          backgroundSize: "70% 100%",
                           backgroundPosition: "center",
                           backgroundRepeat: "no-repeat"
                         }}>
