@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
+    border-right-color: #131921;
 }
 
 .shop-myorder-product {
@@ -16,6 +17,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    background-color: #131921;
 }
 
 .myorder-product-box {

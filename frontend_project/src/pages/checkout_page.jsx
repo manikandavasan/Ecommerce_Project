@@ -35,7 +35,7 @@ export default function Checkout() {
     }
   }
 );
-navigate(`/myorders/`)
+navigate(`orders/myorders/`)
   }
 
   return (
