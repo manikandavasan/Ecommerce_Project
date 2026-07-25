@@ -39,7 +39,7 @@ navigate(`orders/myorders/`)
   }
 
   return (
-    <div className="container overall">
+    <div className="container overall-checkout">
       <h1>Checkout</h1>
 
       <div className="order-summary">
