@@ -113,14 +113,14 @@ export default function Home() {
         <div className="col-12 top-header">
           <form className="d-flex" role="search" onSubmit={`/products/search/`} method="GET">
               <input className="form-control me-2 search-bar" type="search" placeholder="Search" name="q" aria-label="Search" required/>
-              <Link to="/search" className="btn btn-outline-secondary">Search</Link>
+              <Link to="/search" className="btn btn-outline-secondary text-white">Search</Link>
             </form>
             <div className="signin-cart">
               <div className="nav-user">
                 <a href={ `/` }>
                   <i className="fa-solid fa-user"></i>
                 <div className="bg-secondary text-white register-btn">
-                  <p className="m-0">Sign In / Register</p>
+                  <p className="m-0 signin-register-btn">Sign In / Register</p>
                 </div>
                 </a>
               </div>

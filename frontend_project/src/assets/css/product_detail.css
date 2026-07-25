@@ -6,8 +6,8 @@
 }
 
 .product-detail-body {
-    background: #f5f6fa;
     padding: 20px;
+    background-color: #131921;
 }
 
 .product-box {
@@ -120,6 +120,7 @@
 }
 
 .related-product-box {
+    height: fit-content;
     min-width: 180px;
     background: #ffffff;
     border-radius: 10px;

@@ -27,7 +27,7 @@ def get_cart(request):
                 image_url = None
                 if product.image:
                     try:
-                        image_url = product.image.url
+                        image_url = product.image
                     except:
                         image_url = None
                 data.append({

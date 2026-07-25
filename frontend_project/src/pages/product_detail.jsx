@@ -87,8 +87,12 @@ export default function ProductDetail() {
         <div className="col related-product">
             {related.map((p) => (
             <div key={p.id} className="related-product-box">
-              <img src={p.image} alt={product.name} width="100%" height="100px" />
-                    <p>{p.name}</p>
+              <img src={p.image} alt={p.name} width="100%" height="100px" />
+                    <p>
+                      {p.name.split(' ').length > 5 
+                    ? p.name.split(' ').slice(0, 5).join(' ') + '...' 
+                    : p.name}
+                    </p>
                     <h3>${p.price}</h3>
                     <Link className="btn btn-primary p-2 ps-3 pe-3" to={`/product/${p.id}`}>View Detail</Link>
 
