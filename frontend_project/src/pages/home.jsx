@@ -12,6 +12,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
   const  { id } = useParams()
   const Quantity = 1
 
@@ -111,9 +112,24 @@ export default function Home() {
 
       <div className="row">
         <div className="col-12 top-header">
-          <form className="d-flex" role="search" onSubmit={`/products/search/`} method="GET">
-              <input className="form-control me-2 search-bar" type="search" placeholder="Search" name="q" aria-label="Search" required/>
-              <Link to="/search" className="btn btn-outline-secondary text-white">Search</Link>
+          <form
+              className="d-flex"
+              onSubmit={(e) => {
+                e.preventDefault();
+                navigate(`/search?q=${search}`);
+              }}
+            >
+              <input
+                className="form-control me-2 search-bar"
+                type="search"
+                placeholder="Search"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+
+              <button className="btn btn-outline-secondary text-white">
+                Search
+              </button>
             </form>
             <div className="signin-cart">
               <div className="nav-user">
@@ -205,7 +221,6 @@ export default function Home() {
           <p>No products found</p>
         )}
     </div>
-
   </div>
 
   <footer className="footer container-fluid">
