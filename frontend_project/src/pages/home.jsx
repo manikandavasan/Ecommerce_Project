@@ -78,7 +78,7 @@ export default function Home() {
         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
           <li className="nav-item">
-            <a className="nav-link active" href="#">Home</a>
+            <a className="nav-link active text-white" href="#">Home</a>
           </li>
 
           <li className="nav-item dropdown">
@@ -193,11 +193,7 @@ export default function Home() {
           products.map((product) => (
             <div key={product.id} className="featured-product-box">
                 <img src={product.image} alt={product.name} className="featured-product-image" />
-                <h6>
-                  {product.name.split(' ').length > 5 
-                    ? product.name.split(' ').slice(0, 5).join(' ') + '...' 
-                    : product.name}
-                </h6>
+                <h6 className="product-title"> {product.name} </h6>
                 <h5> &#8377; {product.price}</h5>
         <div>
           <button className="btn bg-primary text-white" onClick={()=>addToCart(product.id)}>Add to Cart</button>
