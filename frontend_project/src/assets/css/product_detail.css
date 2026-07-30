@@ -5,6 +5,9 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+.title-h1{
+    color: white;
+}
 .product-detail-body {
     padding: 20px;
     background-color: #131921;

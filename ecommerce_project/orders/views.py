@@ -6,46 +6,30 @@ from django.db.models import Q
 from orders.models import *
 from rest_framework.permissions import AllowAny
 from rest_framework.permissions import IsAuthenticated
+from .serializers import CartItemSerializer
 
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def get_cart(request):
-    try:
-        print("User:", request.user)
-        cart = Cart.objects.filter(user=request.user).first()
-        if not cart:
-            return Response({'cart_items': [], 'total': 0})
-        cart_items = CartItem.objects.filter(cart=cart)
-        data = []
-        total = 0
-        for item in cart_items:
-            try:
-                product = item.product
-                subtotal = product.price * item.quantity
-                total += subtotal
-                image_url = None
-                if product.image:
-                    try:
-                        image_url = product.image
-                    except:
-                        image_url = None
-                data.append({
-                    'id': item.id,
-                    'product_name': product.name,
-                    'price': product.price,
-                    'quantity': item.quantity,
-                    'subtotal': subtotal,
-                    'image': image_url
-                })
-            except Exception as e:
-                print("ITEM ERROR:", str(e))
-                continue
-        return Response({'cart_items': data, 'total': total})
-    
-    except Exception as e:
-        print("GET CART ERROR:", str(e))
-        return Response({'error': str(e)}, status=500)
+    cart = Cart.objects.filter(user=request.user).first()
+
+    if not cart:
+        return Response({
+            "cart_items": [],
+            "total": 0
+        })
+
+    cart_items = CartItem.objects.filter(cart=cart).select_related("product")
+
+    serializer = CartItemSerializer(cart_items, many=True)
+
+    total = sum(item.product.price * item.quantity for item in cart_items)
+
+    return Response({
+        "cart_items": serializer.data,
+        "total": total
+    })
 
 
 @api_view(['POST'])

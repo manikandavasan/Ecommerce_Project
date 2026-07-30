@@ -5,17 +5,15 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-.container {
-    background: #f5f6fa;
+.shopping-cart-container {
     min-height: 100vh;
     padding: 20px;
-    color: #131921;
-    /* background-color: #131921; */
+    background-color: #131921;
 }
 
-.container h1 {
-    margin-bottom: 20px;
+.cart-title-h1{
     color: white;
+    margin-bottom: 20px;
 }
 
 .overall-cart {

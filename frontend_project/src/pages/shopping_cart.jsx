@@ -82,8 +82,8 @@ export default function Cart() {
   }
 
   return (
-    <div className="container">
-      <h1>Shopping Cart</h1>
+    <div className="shopping-cart-container">
+      <h1 className="cart-title-h1">Shopping Cart</h1>
 
       <div className="row overall-cart">
         <div className="col-12 table-wrapper">

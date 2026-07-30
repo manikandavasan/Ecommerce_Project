@@ -51,7 +51,7 @@ export default function ProductDetail() {
 
   return (
     <div className="container-fluid product-detail-body">
-      <h1>Product Details</h1>
+      <h1 className="title-h1">Product Details</h1>
       <div className="row product-box">
         <div className="col-lg-6 product_image">
           <img src={product.image} alt=""  />
@@ -82,7 +82,7 @@ export default function ProductDetail() {
     </div>
 
 
-    <h1>Related Products</h1>
+    <h1 className="title-h1">Related Products</h1>
     <div className="row temporary">
         <div className="col related-product">
             {related.map((p) => (

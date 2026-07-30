@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 import "../assets/css/home.css"
 import Carousel from 'react-bootstrap/Carousel';
+import { FiShoppingCart } from 'react-icons/fi';
 
 
 export default function Home() {
@@ -140,7 +141,7 @@ export default function Home() {
                 </div>
                 </a>
               </div>
-          <Link to="/cart" className="btn bg-secondary text-white">Cart</Link>
+          <Link to="/cart" className="btn bg-secondary text-white"><FiShoppingCart size={28} className="text-gray-800" /> Cart</Link>
           </div>
         </div>
       </div>
