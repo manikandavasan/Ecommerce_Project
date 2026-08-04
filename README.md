@@ -200,26 +200,10 @@ This project uses **JWT (JSON Web Token)** authentication.
 
 ---
 
-# ☁️ Image Storage
+# 📸 Demo
 
-Product images are stored using **Cloudinary** for efficient cloud-based media management.
+https://github.com/user-attachments/assets/cc07e953-32a9-43fc-ab04-3c26649c5a44
 
----
-
-# 📸 Screenshots
-
-Add screenshots here:
-
-```
-screenshots/
-│
-├── home.png
-├── products.png
-├── login.png
-├── cart.png
-├── checkout.png
-└── orders.png
-```
 
 ---
 
